@@ -23,6 +23,8 @@ requirements:
     - cython
     - toolchain
     - numpy x.x
+    - scipy >=0.17.0
+    - matplotlib >=1.4.3
   run:
     - python
     - numpy x.x
