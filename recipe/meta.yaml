@@ -1,6 +1,6 @@
 {% set name = "PyKrige" %}
-{% set version = "1.3.0" %}
-{% set sha256 = "8d51c900d5679a81fee5f91e09eb2c37ac3817f6269bc60f547723669904e1ab" %}
+{% set version = "1.3.2" %}
+{% set sha256 = "dbce06ffda4ab707a79fee51087bb8432dd4e4679109d4ca16de98c832d5a231" %}
 
 package:
   name: {{ name|lower }}
@@ -23,6 +23,8 @@ requirements:
     - cython
     - toolchain
     - numpy x.x
+    - scipy >=0.17.0
+    - matplotlib >=1.4.3
   run:
     - python
     - numpy x.x
