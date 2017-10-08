@@ -1,6 +1,6 @@
 {% set name = "PyKrige" %}
-{% set version = "1.3.1" %}
-{% set sha256 = "440db3ec19e0ffdca1a7470d0063ef32ea05e96391f64fac1837e2711564793b" %}
+{% set version = "1.3.2" %}
+{% set sha256 = "dbce06ffda4ab707a79fee51087bb8432dd4e4679109d4ca16de98c832d5a231" %}
 
 package:
   name: {{ name|lower }}
