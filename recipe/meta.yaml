@@ -1,6 +1,6 @@
 {% set name = "PyKrige" %}
-{% set version = "1.3.2" %}
-{% set sha256 = "dbce06ffda4ab707a79fee51087bb8432dd4e4679109d4ca16de98c832d5a231" %}
+{% set version = "1.4.0" %}
+{% set sha256 = "63f4c93e20fa94bedc41853322feb924c9289b382ddc5678120ddb25777cdfbe" %}
 
 package:
   name: {{ name|lower }}
@@ -22,13 +22,14 @@ requirements:
     - setuptools
     - cython
     - toolchain
-    - numpy x.x
-    - scipy >=0.17.0
+    - numpy 1.11.*
+    # we use scipy BLAS in Cython
+    - scipy 0.18.*
     - matplotlib >=1.4.3
   run:
     - python
-    - numpy x.x
-    - scipy >=0.17.0
+    - numpy >=1.11
+    - scipy >=0.18.1
     - matplotlib >=1.4.3
 
 
