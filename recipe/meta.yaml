@@ -13,22 +13,23 @@ source:
 
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
+    - {{ compiler('c') }}
+  host:
     - python
     - setuptools
     - cython
-    - toolchain
-    - numpy 1.11.*
+    - numpy
     # we use scipy BLAS in Cython
     - scipy 0.18.*
     - matplotlib >=1.4.3
   run:
     - python
-    - numpy >=1.11
+    - {{ pin_compatible('numpy') }}
     - scipy >=0.18.1
     - matplotlib >=1.4.3
 
@@ -45,8 +46,8 @@ about:
   summary: 'Kriging Toolkit for Python'
   description: |
       The code supports two- and three- dimensional ordinary and universal
-      kriging. Standard variogram models (linear, power, spherical, 
-      gaussian, exponential) are built in, but custom variogram models 
+      kriging. Standard variogram models (linear, power, spherical,
+      gaussian, exponential) are built in, but custom variogram models
       can also be used with the code.
 
   doc_url: http://pykrige.readthedocs.io/en/latest/
