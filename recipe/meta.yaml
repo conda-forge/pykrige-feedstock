@@ -23,7 +23,8 @@ requirements:
     - python
     - setuptools
     - cython
-    - numpy
+    # scipy 0.18.* has a minimal dep of numpy 1.11.*
+    - numpy 1.11.*
     # we use scipy BLAS in Cython
     - scipy 0.18.*
     - matplotlib >=1.4.3
