@@ -14,7 +14,7 @@ source:
 
 build:
   number: 1001
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: python -m pip install --no-deps --ignore-installed .  --verbose
 
 requirements:
   build:
@@ -23,15 +23,14 @@ requirements:
     - python
     - setuptools
     - cython
-    # scipy 0.18.* has a minimal dep of numpy 1.11.*
-    - numpy 1.11.*
+    - numpy
     # we use scipy BLAS in Cython
-    - scipy 0.18.*
+    - scipy
     - matplotlib >=1.4.3
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - scipy >=0.18.1
+    - {{ pin_compatible('scipy') }}
     - matplotlib >=1.4.3
 
 
