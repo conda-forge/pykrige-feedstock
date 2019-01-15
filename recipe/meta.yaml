@@ -1,6 +1,6 @@
 {% set name = "PyKrige" %}
-{% set version = "1.4.0" %}
-{% set sha256 = "63f4c93e20fa94bedc41853322feb924c9289b382ddc5678120ddb25777cdfbe" %}
+{% set version = "1.4.1" %}
+{% set sha256 = "caafb7ffb8429d336813527ac0a5642e8b8deb8922d25f76cb4bfdc81cf1268c" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 
 build:
-  number: 1001
+  number: 1000
   script: python -m pip install --no-deps --ignore-installed .  --verbose
 
 requirements:
