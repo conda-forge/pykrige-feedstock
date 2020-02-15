@@ -13,7 +13,7 @@ source:
 
 
 build:
-  number: 1001
+  number: 1002
   script: python -m pip install --no-deps --ignore-installed .  --verbose
 
 requirements:
@@ -27,12 +27,12 @@ requirements:
     - numpy
     # we use scipy BLAS in Cython
     - scipy
-    - matplotlib >=1.4.3
+    - matplotlib-base >=1.4.3
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - {{ pin_compatible('scipy') }}
-    - matplotlib >=1.4.3
+    - matplotlib-base >=1.4.3
 
 
 test:
