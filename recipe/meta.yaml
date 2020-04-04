@@ -1,6 +1,6 @@
 {% set name = "PyKrige" %}
-{% set version = "1.4.0" %}
-{% set sha256 = "63f4c93e20fa94bedc41853322feb924c9289b382ddc5678120ddb25777cdfbe" %}
+{% set version = "1.5.0" %}
+{% set sha256 = "f5b96f8f7244a4e0357b97130a42cf36042300458f238ce3a534d0580f71b121" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 
 build:
-  number: 1002
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .  --verbose
 
 requirements:
@@ -41,15 +41,15 @@ test:
 
 about:
   home: https://github.com/bsmurphy/PyKrige
-  license: "BSD-3-Clause"
-  license_family: "BSD"
+  license: BSD-3-Clause
+  license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Kriging Toolkit for Python'
+  summary: Kriging Toolkit for Python
   description: |
-      The code supports two- and three- dimensional ordinary and universal
-      kriging. Standard variogram models (linear, power, spherical,
-      gaussian, exponential) are built in, but custom variogram models
-      can also be used with the code.
+    The code supports two- and three- dimensional ordinary and universal
+    kriging. Standard variogram models (linear, power, spherical,
+    gaussian, exponential) are built in, but custom variogram models
+    can also be used with the code.
 
   doc_url: http://pykrige.readthedocs.io/en/latest/
   dev_url: https://github.com/bsmurphy/PyKrige
