@@ -1,6 +1,6 @@
 {% set name = "PyKrige" %}
-{% set version = "1.4.0" %}
-{% set sha256 = "63f4c93e20fa94bedc41853322feb924c9289b382ddc5678120ddb25777cdfbe" %}
+{% set version = "1.5.0" %}
+{% set sha256 = "f5b96f8f7244a4e0357b97130a42cf36042300458f238ce3a534d0580f71b121" %}
 
 package:
   name: {{ name|lower }}
@@ -11,49 +11,56 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
-
 build:
-  number: 1002
-  script: python -m pip install --no-deps --ignore-installed .  --verbose
+  number: 0
+  script:
+    - export SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    # [unix]
+    - set SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    # [win]
+    - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - python
-    - setuptools
     - pip
-    - cython
-    - numpy
-    # we use scipy BLAS in Cython
-    - scipy
-    - matplotlib-base >=1.4.3
+    - python
+    - setuptools >=45
+    - setuptools_scm >=3.5
+    - cython >=0.28.3
+    - numpy >=1.14.5
+    - scipy >=1.1.0
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - {{ pin_compatible('scipy') }}
-    - matplotlib-base >=1.4.3
-
 
 test:
   imports:
     - pykrige
+  requires:
+    - pytest >=5.3.0
+    - scikit-learn >=0.19
+    - gstools >=1.1.1
+  source_files:
+    - tests
+  commands:
+    - pytest -vv tests
 
 about:
-  home: https://github.com/bsmurphy/PyKrige
-  license: "BSD-3-Clause"
-  license_family: "BSD"
-  license_file: LICENSE.txt
-  summary: 'Kriging Toolkit for Python'
+  home: https://github.com/GeoStat-Framework/PyKrige
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: Kriging Toolkit for Python
   description: |
-      The code supports two- and three- dimensional ordinary and universal
-      kriging. Standard variogram models (linear, power, spherical,
-      gaussian, exponential) are built in, but custom variogram models
-      can also be used with the code.
-
-  doc_url: http://pykrige.readthedocs.io/en/latest/
-  dev_url: https://github.com/bsmurphy/PyKrige
+    The code supports two- and three- dimensional ordinary and universal
+    kriging. Standard variogram models (linear, power, spherical,
+    gaussian, exponential) are built in, but custom variogram models
+    can also be used with the code.
+  doc_url: http://pykrige.readthedocs.io/
+  dev_url: https://github.com/GeoStat-Framework/PyKrige
 
 extra:
   recipe-maintainers:
     - rth
+    - MuellerSeb
