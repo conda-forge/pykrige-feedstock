@@ -1,6 +1,6 @@
 {% set name = "PyKrige" %}
-{% set version = "1.5.1" %}
-{% set sha256 = "8265af45854919096af0d0b48d12e58354a370f5803326b2e09c8bdb8b686892" %}
+{% set version = "1.6.0" %}
+{% set sha256 = "f25a5ec6478c95cd995ae26e8ba5f18c969044caf50580f74303e71a6ce3dca6" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script:
     - export SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    # [unix]
     - set SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    # [win]
