@@ -1,6 +1,6 @@
 {% set name = "PyKrige" %}
-{% set version = "1.6.0" %}
-{% set sha256 = "f25a5ec6478c95cd995ae26e8ba5f18c969044caf50580f74303e71a6ce3dca6" %}
+{% set version = "1.6.1" %}
+{% set sha256 = "7432287306d13820ed0f0ec2f52c12fa462e18015abbf8fa627beab989ccaff6" %}
 
 package:
   name: {{ name|lower }}
@@ -14,9 +14,7 @@ source:
 build:
   number: 0
   script:
-    - export SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    # [unix]
-    - set SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    # [win]
-    - {{ PYTHON }} -m pip install . --no-deps -vv
+    - {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   build:
@@ -24,11 +22,12 @@ requirements:
   host:
     - pip
     - python
+    - toml
     - setuptools >=45
     - setuptools_scm >=3.5
-    - cython >=0.28.3
-    - numpy >=1.14.5
-    - scipy >=1.1.0
+    - cython >=0.28.3, <3.0
+    - numpy >=1.14.5, <2.0
+    - scipy >=1.1.0, <2.0
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -40,7 +39,7 @@ test:
   requires:
     - pytest >=5.3.0
     - scikit-learn >=0.19
-    - gstools >=1.1.1
+    - gstools >=1.1.1, <2.0
   source_files:
     - tests
   commands:
