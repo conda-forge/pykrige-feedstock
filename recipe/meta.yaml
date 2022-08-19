@@ -1,6 +1,6 @@
 {% set name = "PyKrige" %}
-{% set version = "1.6.1" %}
-{% set sha256 = "7432287306d13820ed0f0ec2f52c12fa462e18015abbf8fa627beab989ccaff6" %}
+{% set version = "1.7.0" %}
+{% set sha256 = "c814b65f00f55b2ede79b52132985a2a0015b8b397341938e27ed53a24bc63de" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script:
     - {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
@@ -23,8 +23,8 @@ requirements:
     - pip
     - python
     - toml
-    - setuptools >=45
-    - setuptools_scm >=3.5
+    - setuptools >=62
+    - setuptools_scm >=6.4
     - cython >=0.28.3, <3.0
     - numpy >=1.14.5, <2.0
     - scipy >=1.1.0, <2.0
@@ -39,7 +39,7 @@ test:
   requires:
     - pytest >=5.3.0
     - scikit-learn >=0.19
-    - gstools >=1.1.1, <2.0
+    - gstools >=1.4.0, <2.0
   source_files:
     - tests
   commands:
