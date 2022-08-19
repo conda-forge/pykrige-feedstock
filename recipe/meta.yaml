@@ -1,6 +1,6 @@
 {% set name = "PyKrige" %}
-{% set version = "1.6.1" %}
-{% set sha256 = "7432287306d13820ed0f0ec2f52c12fa462e18015abbf8fa627beab989ccaff6" %}
+{% set version = "1.7.0" %}
+{% set sha256 = "c814b65f00f55b2ede79b52132985a2a0015b8b397341938e27ed53a24bc63de" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script:
     - {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
