@@ -1,11 +1,11 @@
-About pykrige
-=============
+About pykrige-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pykrige-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/GeoStat-Framework/PyKrige
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pykrige-feedstock/blob/main/LICENSE.txt)
 
 Summary: Kriging Toolkit for Python
 
