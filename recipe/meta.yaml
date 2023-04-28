@@ -22,6 +22,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
+    - scipy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
   host:
     - pip
@@ -30,8 +31,8 @@ requirements:
     - setuptools >=62
     - setuptools_scm >=6.4
     - cython >=0.28.3, <3.0
-    - numpy >=1.14.5, <2.0
-    - scipy >=1.1.0, <2.0
+    - numpy
+    - scipy
   run:
     - python
     - {{ pin_compatible('numpy') }}
