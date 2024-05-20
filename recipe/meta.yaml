@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script:
     - {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
@@ -24,6 +24,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - scipy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - pip
     - python
@@ -35,7 +36,6 @@ requirements:
     - scipy
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - {{ pin_compatible('scipy') }}
 
 test:
