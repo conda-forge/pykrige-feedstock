@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script:
     - {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
@@ -36,7 +36,6 @@ requirements:
     - scipy
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - {{ pin_compatible('scipy') }}
 
 test:
