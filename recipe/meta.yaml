@@ -1,6 +1,6 @@
 {% set name = "pykrige" %}
-{% set version = "1.7.2" %}
-{% set sha256 = "25b45a4173714c0b62098d19019404cb3978fa8bd8abae9ba55a272a53979e35" %}
+{% set version = "1.7.3" %}
+{% set sha256 = "4f06623f9a2c5c5f637d802432ea7843af1b8b5aed33628466224691c52f177c" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +8,11 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   script:
     - {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
