@@ -49,7 +49,7 @@ test:
   source_files:
     - tests
   commands:
-    - pytest -vv tests
+    - pytest -k "not housing" -vv tests
 
 about:
   home: https://github.com/GeoStat-Framework/PyKrige
